@@ -1,0 +1,21 @@
+{
+  "name": "dash-door",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "beautiful-log": "^1.3.0",
+    "castv2-client": "^1.1.2",
+    "chromecast-scanner": "^0.5.0",
+    "ip": "^1.1.4",
+    "node-dash-button": "^0.6.1",
+    "node-static": "^0.7.9",
+    "promisify-node": "^0.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
