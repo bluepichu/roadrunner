@@ -16,7 +16,7 @@ http.createServer((req, res) => {
 			log.log(req.body);
 			res.writeHead(200, "OK");
 			res.end();
-			cp.execSync("git pull origin master && npm install");
+			cp.execSync("su runner -c 'git pull origin master && npm install'");
 			process.exit();
 		} else {
 			log.log("Serving:", req.url);
