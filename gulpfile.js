@@ -36,8 +36,8 @@ let test    = (...dirs) => dirs.map((dir) => path.join("test", dir));
 let build   = (dir) => path.join("build", dir);
 let map     = "map";
 let notify  = (message) => notifier.notify({
-			title: "RoadRunner Build",
-			message: message,
+			title: "Meep Meep",
+			message: message.replace(/[^ ]*/, "Meep").replace(/ [^ ]*/g, " meep"),
 			icon: path.join(__dirname, "icon.gif")
 		});
 
