@@ -1,0 +1,17 @@
+{
+  "name": "dash-door",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Zachary Wade <zacharywade@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/bluepichu/RoadRunner",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
