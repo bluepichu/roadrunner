@@ -8,8 +8,6 @@ let notifier      = require("node-notifier");
 let $             = require("gulp-load-plugins")({ pattern: ["gulp-*", "gulp.*", "main-bower-files"] });
 
 const SERVER_TS_CONFIG = {
-	"emitDecoratorMetadata": true,
-	"exprimentalDecorators": true,
 	"target": "es6",
 	"module": "commonjs",
 	"moduleResolution": "node",
@@ -19,8 +17,6 @@ const SERVER_TS_CONFIG = {
 };
 
 const CLIENT_TS_CONFIG = {
-	"emitDecoratorMetadata": true,
-	"experimentalDecorators": true,
 	"target": "es6",
 	"moduleResolution": "node",
 	"removeComments": true,

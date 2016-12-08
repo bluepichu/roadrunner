@@ -25,6 +25,8 @@
     "typescript": "^2.1.4"
   },
   "devDependencies": {
+    "@types/ip": "0.0.29",
+    "@types/mime": "0.0.29",
     "@types/node": "0.0.2"
   },
   "scripts": {

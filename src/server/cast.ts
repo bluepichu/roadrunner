@@ -1,20 +1,19 @@
-const {
+import {
 	Client,
 	DefaultMediaReceiver
-} = require("castv2-client");
+} from "castv2-client";
 
-const scanner = require("chromecast-scanner");
-const log = require("beautiful-log");
-const promisify = require("promisify-node");
-const ip = require("ip");
+import scanner from "chromecast-scanner";
+import * as log from "beautiful-log";
+import * as ip from "ip";
 
-function prm(obj, fn, ...args) {
+function prm(obj: { [key: string]: Function }, fn: string, ...args: any[]): Promise<any> {
 	return new Promise(function(resolve, reject) {
-		args.push((err, ...data) => {
+		args.push((err: any, data: any) => {
 			if (err) {
 				reject(err);
 			} else {
-				resolve(...data);
+				resolve(data);
 			}
 		});
 
@@ -22,7 +21,7 @@ function prm(obj, fn, ...args) {
 	});
 }
 
-module.exports = function(path, type, level, timeout) {
+export default function(path: string, type: string, level: number, timeout: number) {
 	const media = {
 		contentId: `http://${ip.address()}:8080/${path}`,
 		contentType: type,
@@ -31,7 +30,6 @@ module.exports = function(path, type, level, timeout) {
 
 	return () => scanner((err, service) => {
 		let client = new Client();
-		promisify(client);
 
 		new Promise((res, rej) => client.connect(service.data, (err) => err ? rej(err) : res()))
 			.then(() => {

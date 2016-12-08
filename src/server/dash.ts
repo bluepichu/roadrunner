@@ -1,8 +1,8 @@
-const dash = require("node-dash-button");
-const log = require("beautiful-log");
+import dash from "node-dash-button";
+import * as log from "beautiful-log";
 
-module.exports = function(mac string, name: string, cb): void {
-	let btn: DashButton = dash(mac, null, null, "all");
+export default function(mac: string, name: string, cb: () => void): void {
+	let btn = dash(mac, null, null, "all");
 
 	btn.on("detected", () => {
 		log.info("Detected button press for", name);

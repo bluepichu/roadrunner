@@ -1,19 +1,20 @@
-const dash = require("./dash");
-const cast = require("./cast");
+"use strict";
 
-const log = require("beautiful-log");
-const static = require("node-static");
-const http = require("http");
-const cp = require("child_process");
-const process = require("process");
+import dash from "./dash";
+import cast from "./cast";
 
-const file = new static.Server("./public");
+import * as log from "beautiful-log";
+import * as ns from "node-static";
+import * as http from "http";
+import * as cp from "child_process";
+import * as process from "process";
+
+const file = new ns.Server("./public");
 
 http.createServer((req, res) => {
 	req.addListener("end", () => {
 		if (req.method === "POST" && req.url === "/git-update") {
 			log.ok("Received git update");
-			log.log(req.body);
 			res.writeHead(200, "OK");
 			res.end();
 			cp.execSync("su runner -c 'git pull origin master && npm install'");
