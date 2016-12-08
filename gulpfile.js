@@ -86,7 +86,7 @@ gulp.task("watch-server", () => {
 });
 
 gulp.task("server", () =>
-	gulp.src(src("{server/**/*.ts,index.ts,common/**/*.ts}"))
+	gulp.src(src("{types/**/*.ts,server/**/*.ts,index.ts,common/**/*.ts}"))
 	    .pipe($.sourcemaps.init())
 	    .pipe($.typescript(SERVER_TS_CONFIG))
 	    .pipe($.sourcemaps.write(map))
