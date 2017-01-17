@@ -26,4 +26,4 @@ http.createServer((req, res) => {
 }).listen(8080);
 
 dash("a0:02:dc:3a:1c:ec", "ON", cast("airhorn.mp3", "audio/mp3", .75, 12000));
-dash("44:65:0d:c5:6d:5f", "All", cast("jingle-doorbell.mp3", "audio/mp3", .75, 12000));
+dash("44:65:0d:c5:6d:5f", "All", cast("doorbell.mp3", "audio/mp3", .75, 12000));
