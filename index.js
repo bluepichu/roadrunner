@@ -22,7 +22,7 @@ http.createServer((req, res) => {
 			log.log(req.body);
 			res.writeHead(200, "OK");
 			res.end();
-			cp.execSync("su runner -c 'git pull origin master && npm install'");
+			cp.execSync("su runner -c 'git reset --hard HEAD && git pull -f origin master && npm install'");
 			process.exit();
 		} else {
 			log.log("Serving:", req.url);
@@ -32,4 +32,4 @@ http.createServer((req, res) => {
 }).listen(8080);
 
 dash("a0:02:dc:3a:1c:ec", "ON"); // Do nothing; used for local testing
-dash("44:65:0d:c5:6d:5f", "All", cast("doorbell.mp3", "audio/mp3", .75, 12000), particle("1f0039001047343339383037", "setPattern", "flash"), delay(particle("1f0039001047343339383037", "setPattern", "last"), 4000));
+dash("44:65:0d:c5:6d:5f", "All", cast("doorbell.mp3", "audio/mp3", .75, 12000), particle("1f0039001047343339383037", "setPattern", "flash"), delay(particle("1f0039001047343339383037", "setPattern", "last"), 12000));
