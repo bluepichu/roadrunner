@@ -3,6 +3,7 @@ const nconf = require("nconf");
 nconf.argv().env();
 
 const dash = require("./dash");
+const ayla = require("./ayla");
 const cast = require("./cast");
 const particle = require("./particle")(nconf.get("PARTICLE_USER"), nconf.get("PARTICLE_PASS"));
 const delay = require("./delay");
@@ -17,6 +18,18 @@ const file = new static.Server("./public");
 
 http.createServer((req, res) => {
 	req.addListener("end", () => {
+		if (req.method === "POST" && req.url === "/lights/on") {
+			ayla(nconf.get("AYLA_AUTH_TOKEN"), true);
+			res.write("On");
+			res.end();
+			return;
+		} else if (req.method === "POST" && req.url === "/lights/off") {
+			ayla(nconf.get("AYLA_AUTH_TOKEN"), false);
+			res.write("Off");
+			res.end();
+			return;
+		}
+
 		if (req.method === "POST" && req.url === "/git-update") {
 			log.ok("Received git update");
 			log.log(req.body);

@@ -24,6 +24,7 @@
     "node-static": "^0.7.9",
     "particle-api-js": "^6.4.2",
     "promisify-node": "^0.4.0",
+    "request": "^2.79.0",
     "typescript": "^2.1.4"
   },
   "devDependencies": {},
