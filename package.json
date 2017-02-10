@@ -21,6 +21,7 @@
     "nconf": "^0.8.4",
     "node-dash-button": "^0.6.1",
     "node-notifier": "^4.6.1",
+    "node-schedule": "^1.2.0",
     "node-static": "^0.7.9",
     "particle-api-js": "^6.4.2",
     "promisify-node": "^0.4.0",
