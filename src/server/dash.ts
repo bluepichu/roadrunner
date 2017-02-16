@@ -1,4 +1,4 @@
-import dash from "node-dash-button";
+import dash = require("node-dash-button");
 import * as log from "beautiful-log";
 
 export default function(mac: string, name: string, ...cbs: (() => void)[]): void {

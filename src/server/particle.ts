@@ -1,4 +1,4 @@
-import Particle from "particle-api-js"
+import Particle = require("particle-api-js")
 const particle = new Particle();
 
 export default function(username: string, password: string) {

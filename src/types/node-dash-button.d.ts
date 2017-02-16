@@ -5,5 +5,7 @@ declare module "node-dash-button" {
 		on(e: string, cb: () => void): void;
 	}
 
-	export default function(mac: string, iface: string, timeout: number, protocol: string): DashButton;
+	function dashConn(mac: string, iface: string, timeout: number, protocol: string): DashButton;
+
+	export = dashConn
 }
