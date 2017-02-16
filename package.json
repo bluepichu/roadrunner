@@ -18,16 +18,23 @@
     "ip": "^1.1.4",
     "main-bower-files": "^2.13.1",
     "merge-stream": "^1.0.1",
+    "nconf": "^0.8.4",
     "node-dash-button": "^0.6.1",
     "node-notifier": "^4.6.1",
+    "node-schedule": "^1.2.0",
     "node-static": "^0.7.9",
+    "particle-api-js": "^6.4.2",
     "promisify-node": "^0.4.0",
+    "request": "^2.79.0",
     "typescript": "^2.1.4"
   },
   "devDependencies": {
     "@types/ip": "0.0.29",
     "@types/mime": "0.0.29",
-    "@types/node": "0.0.2"
+    "@types/nconf": "0.0.33",
+    "@types/node": "0.0.2",
+    "@types/node-schedule": "0.0.36",
+    "@types/request": "0.0.40"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
