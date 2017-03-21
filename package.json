@@ -28,7 +28,14 @@
     "request": "^2.79.0",
     "typescript": "^2.1.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/ip": "0.0.29",
+    "@types/mime": "0.0.29",
+    "@types/nconf": "0.0.33",
+    "@types/node": "0.0.2",
+    "@types/node-schedule": "0.0.36",
+    "@types/request": "0.0.40"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

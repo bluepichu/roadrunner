@@ -1,12 +1,22 @@
-const request = require("request");
-const nconf = require("nconf");
+/********************************
+ *
+ * RoadRunner for Raspberry Pi
+ *
+ * Matthew Savage and Zach Wade
+ *
+ ********************************/
 
-class ayla {
+
+import * as request from "request"
+import * as nconf from "nconf"
+
+export default class ayla {
+	state: boolean;
 	constructor() {
-		this.state = 0;
+		this.state = false;
 	}
 
-	setState(auth, on) {
+	setState(auth: string, on: boolean) {
 		this.state = on
 		request.post({
 			url: "https://ads-field.aylanetworks.com/apiv1/properties/18944260/datapoints.json",
@@ -24,13 +34,13 @@ class ayla {
 		});
 	}
 
-	trigger(auth) {
-		this.state = this.state ^ 1;
+	trigger(auth: string): string {
+		this.state = !this.state;
 		this.setState(auth, this.state);
 		return this.state ? "On" : "Off";
 	}
 
-	renew() {
+	renew(): Promise<string> {
 		return new Promise((resolve, reject) => {
 			request.post({
 				url: "https://user.aylanetworks.com/api/v1/token_sign_in.json",
@@ -53,5 +63,3 @@ class ayla {
 		})
 	}
 }
-
-module.exports = ayla;

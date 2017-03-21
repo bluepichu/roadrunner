@@ -1,3 +1,11 @@
+/********************************
+ *
+ * RoadRunner for Raspberry Pi
+ *
+ * Matthew Savage and Zach Wade
+ *
+ ********************************/
+
 "use strict";
 
 let es2015        = require("babel-preset-es2015");
@@ -8,8 +16,6 @@ let notifier      = require("node-notifier");
 let $             = require("gulp-load-plugins")({ pattern: ["gulp-*", "gulp.*", "main-bower-files"] });
 
 const SERVER_TS_CONFIG = {
-	"emitDecoratorMetadata": true,
-	"exprimentalDecorators": true,
 	"target": "es6",
 	"module": "commonjs",
 	"moduleResolution": "node",
@@ -19,8 +25,6 @@ const SERVER_TS_CONFIG = {
 };
 
 const CLIENT_TS_CONFIG = {
-	"emitDecoratorMetadata": true,
-	"experimentalDecorators": true,
 	"target": "es6",
 	"moduleResolution": "node",
 	"removeComments": true,
@@ -86,7 +90,7 @@ gulp.task("watch-server", () => {
 });
 
 gulp.task("server", () =>
-	gulp.src(src("{server/**/*.ts,index.ts,common/**/*.ts}"))
+	gulp.src(src("{types/**/*.ts,server/**/*.ts,index.ts,common/**/*.ts}"))
 	    .pipe($.sourcemaps.init())
 	    .pipe($.typescript(SERVER_TS_CONFIG))
 	    .pipe($.sourcemaps.write(map))
