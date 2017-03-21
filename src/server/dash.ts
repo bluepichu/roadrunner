@@ -1,3 +1,11 @@
+/********************************
+ *
+ * RoadRunner for Raspberry Pi
+ *
+ * Matthew Savage and Zach Wade
+ *
+ ********************************/
+
 import dash = require("node-dash-button");
 import * as log from "beautiful-log";
 

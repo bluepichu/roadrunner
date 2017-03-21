@@ -1,3 +1,11 @@
+/********************************
+ *
+ * RoadRunner for Raspberry Pi
+ *
+ * Matthew Savage and Zach Wade
+ *
+ ********************************/
+
 import Particle = require("particle-api-js")
 const particle = new Particle();
 

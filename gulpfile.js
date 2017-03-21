@@ -1,3 +1,11 @@
+/********************************
+ *
+ * RoadRunner for Raspberry Pi
+ *
+ * Matthew Savage and Zach Wade
+ *
+ ********************************/
+
 "use strict";
 
 let es2015        = require("babel-preset-es2015");

@@ -1,3 +1,11 @@
+/********************************
+ *
+ * RoadRunner for Raspberry Pi
+ *
+ * Matthew Savage and Zach Wade
+ *
+ ********************************/
+
 import {
 	Client,
 	DefaultMediaReceiver

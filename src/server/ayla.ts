@@ -1,3 +1,12 @@
+/********************************
+ *
+ * RoadRunner for Raspberry Pi
+ *
+ * Matthew Savage and Zach Wade
+ *
+ ********************************/
+
+
 import * as request from "request"
 import * as nconf from "nconf"
 
