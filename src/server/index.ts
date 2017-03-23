@@ -39,6 +39,7 @@ app.post("/lights/off", (req, res) => { ayla.setState(aylaAuth, false); res.stat
 app.post("/lights/trigger", (req, res) => { ayla.trigger(aylaAuth); res.status(200).send("Ok"); })
 app.get("/lights/trigger", (req, res) => { ayla.trigger(aylaAuth); res.status(200).send("Ok"); })
 
+
 setAuthHooks(app);
 
 dash("a0:02:dc:3a:1c:ec", "ON", () => ayla.trigger(aylaAuth));

@@ -1,6 +1,8 @@
 import * as log from "beautiful-log"
 import * as cp from "child_process";
 import * as express from "express";
+import greenlock = require("greenlock-express")
+
 
 let app = express();
 
@@ -14,6 +16,12 @@ app.post("/git-update", (req, res) => {
 	process.exit();
 });
 
-app.listen(8080);
+greenlock.create({
+	server: "staging",
+	email: "zwade@dttw.tech",
+	agreeTos: true,
+	approveDomains: ["local.ctfit.pw"],
+	app: app
+}).listen(80, 443)
 
 export default app;
