@@ -11,7 +11,7 @@ import {
 	DefaultMediaReceiver
 } from "castv2-client";
 
-import scanner from "chromecast-scanner";
+import scanner = require("chromecast-scanner");
 import * as log from "beautiful-log";
 import * as ip from "ip";
 
@@ -31,7 +31,7 @@ function prm(obj: { [key: string]: Function }, fn: string, ...args: any[]): Prom
 
 export default function(path: string, type: string, level: number, timeout: number) {
 	const media = {
-		contentId: `http://${ip.address()}:8080/${path}`,
+		contentId: path.substring(0, 4) == "http" ? path : `http://${ip.address()}:8080/${path}`,
 		contentType: type,
 		streamType: "LIVE"
 	};
