@@ -10,7 +10,7 @@ app.post("/git-update", (req, res) => {
 	log.ok("Received git update");
 	res.writeHead(200, "OK");
 	res.end();
-	cp.execSync("su runner -c 'git reset --hard HEAD && git pull -f origin master && npm install'");
+	cp.execSync("su runner -c 'git reset --hard HEAD && git pull -f origin master && npm install && gulp'");
 	process.exit();
 });
 
