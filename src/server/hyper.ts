@@ -12,16 +12,16 @@ app.post("/git-update", (req, res) => {
 	log.ok("Received git update");
 	res.writeHead(200, "OK");
 	res.end();
-	cp.execSync("su runner -c 'git reset --hard HEAD && git pull -f origin master && npm install'");
+	cp.execSync("su runner -c 'git reset --hard HEAD && git pull -f origin master && npm install && gulp server'");
 	process.exit();
 });
 
 greenlock.create({
-	server: "staging",
+	server: "https://acme-v01.api.letsencrypt.org/directory",
 	email: "zwade@dttw.tech",
 	agreeTos: true,
 	approveDomains: ["local.ctfit.pw"],
 	app: app
-}).listen(80, 443)
+}).listen(8080, 8081)
 
 export default app;
