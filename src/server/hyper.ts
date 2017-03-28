@@ -4,9 +4,11 @@ import * as express from "express";
 import greenlock = require("greenlock-express")
 
 
+import * as path from "path";
+
 let app = express();
 
-app.use(express.static("../../public"));
+app.use(express.static(path.join(__dirname, "../../public")));
 
 app.post("/git-update", (req, res) => {
 	log.ok("Received git update");
