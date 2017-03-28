@@ -11,7 +11,7 @@ import {
 	DefaultMediaReceiver
 } from "castv2-client";
 
-import scanner from "chromecast-scanner";
+import scanner = require("chromecast-scanner");
 import * as log from "beautiful-log";
 import * as ip from "ip";
 

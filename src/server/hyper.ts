@@ -1,10 +1,11 @@
 import * as log from "beautiful-log"
 import * as cp from "child_process";
 import * as express from "express";
+import * as path from "path";
 
 let app = express();
 
-app.use(express.static("../../public"));
+app.use(express.static(path.join(__dirname, "../../public")));
 
 app.post("/git-update", (req, res) => {
 	log.ok("Received git update");
