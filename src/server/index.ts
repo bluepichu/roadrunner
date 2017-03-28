@@ -39,6 +39,7 @@ app.post("/lights/off", (req, res) => { ayla.setState(aylaAuth, false); res.stat
 app.post("/lights/trigger", (req, res) => { ayla.trigger(aylaAuth); res.status(200).send("Ok"); })
 app.get("/lights/trigger", (req, res) => { ayla.trigger(aylaAuth); res.status(200).send("Ok"); })
 
+
 setAuthHooks(app);
 
 dash("a0:02:dc:3a:1c:ec", "ON", () => ayla.trigger(aylaAuth));
@@ -47,4 +48,3 @@ dash("f0:27:2d:bb:21:9d", "Gatorade", () => door(51022800).then((code) => tts(co
 dash("44:65:0d:06:c8:b4", "Snuggie", () => door(51022800).then((code) => tts(code.split("").join(" "), 0)).then((url) => {console.log(url); cast(url, "audio/mp3", .75, 12000)()}));
 
 process.on("unhandledRejection", (reason: string) => log.error(reason));
-

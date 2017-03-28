@@ -3,3 +3,4 @@
 /// <reference path="chromecast-scanner.d.ts"/>
 /// <reference path="node-static.d.ts"/>
 /// <reference path="particle-api-js.d.ts"/>
+/// <reference path="greenlock-express.d.ts"/>
