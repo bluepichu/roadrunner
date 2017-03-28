@@ -1,10 +1,8 @@
 import * as log from "beautiful-log"
 import * as cp from "child_process";
 import * as express from "express";
-import greenlock = require("greenlock-express")
-
-
 import * as path from "path";
+import greenlock = require("greenlock-express")
 
 let app = express();
 

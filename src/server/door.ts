@@ -12,8 +12,8 @@ nconf.argv().env();
 
 const CONSUMER_KEY    = "sVk3JJ04K2BlOk4zoVg3QLGhu2WqPkoS";
 const CONSUMER_SECRET = nconf.get("CBORD_CONSUMER_SECRET");
-const PORT            = nconf.get("port") || 8080;
-const HOST            = os.hostname();
+const PORT            = nconf.get("RRPORT") || 8080;
+const HOST            = nconf.get("RRHOST") || os.hostname();
 
 const REQUEST_TOKEN_URL   = "https://access.housing.cmu.edu//common/oauth/request_token.php";
 const AUTHORIZE_TOKEN_URL = "https://access.housing.cmu.edu//common/oauth/authorize.php";
