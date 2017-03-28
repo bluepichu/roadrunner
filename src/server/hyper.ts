@@ -3,6 +3,8 @@ import * as cp from "child_process";
 import * as express from "express";
 import * as path from "path";
 
+import * as path from "path";
+
 let app = express();
 
 app.use(express.static(path.join(__dirname, "../../public")));

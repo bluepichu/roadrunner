@@ -9,6 +9,7 @@
     "castv2-client": "^1.1.2",
     "chromecast-scanner": "^0.5.0",
     "express": "^4.15.2",
+    "google-tts-api": "0.0.1",
     "gulp": "^3.9.1",
     "gulp-debug": "^3.0.0",
     "gulp-ignore": "^2.0.2",
@@ -36,7 +37,8 @@
     "@types/nconf": "0.0.33",
     "@types/node": "0.0.2",
     "@types/node-schedule": "0.0.36",
-    "@types/request": "0.0.40"
+    "@types/request": "0.0.40",
+    "@types/uuid": "^2.0.29"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

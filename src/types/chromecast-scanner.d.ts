@@ -5,5 +5,5 @@ declare module "chromecast-scanner" {
 
 	function scan(callback: (error: Error, service: ServiceData) => any): void;
 
-	export = scan
+	export = scan;
 }
