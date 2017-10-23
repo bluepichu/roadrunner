@@ -14,6 +14,12 @@ import {
 import scanner = require("chromecast-scanner");
 import * as log from "beautiful-log";
 import * as ip from "ip";
+import * as nconf from "nconf"
+
+nconf.argv().env()
+
+const PORT = nconf.get("RRPORT") || 8080
+const HOST = nconf.get("RRHOST") || ip.address()
 
 function prm(obj: { [key: string]: Function }, fn: string, ...args: any[]): Promise<any> {
 	return new Promise(function(resolve, reject) {
@@ -31,10 +37,11 @@ function prm(obj: { [key: string]: Function }, fn: string, ...args: any[]): Prom
 
 export default function(path: string, type: string, level: number, timeout: number) {
 	const media = {
-		contentId: path.substring(0, 4) == "http" ? path : `http://${ip.address()}:8080/${path}`,
+		contentId: path.substring(0, 4) == "http" ? path : `http://${HOST}/${path}`,
 		contentType: type,
 		streamType: "LIVE"
 	};
+	console.log(media)
 
 	return () => scanner((err, service) => {
 		let client = new Client();
