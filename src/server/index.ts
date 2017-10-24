@@ -43,7 +43,9 @@ app.get("/lights/trigger", (req, res) => { ayla.trigger(aylaAuth); res.status(20
 setAuthHooks(app);
 
 dash("a0:02:dc:3a:1c:ec", "ON", () => ayla.trigger(aylaAuth));
-dash("44:65:0d:d0:0c:09", "Energizer", () => particle("1f0039001047343339383037", "setProjector", "switch"));
+dash("44:65:0d:d0:0c:09", "Energizer", particle("1f0039001047343339383037", "setProjector", "switch"));
+dash("0c:47:c9:0b:5a:a7", "Larabar",   particle("1f0039001047343339383037", "setProjector", "bork"));
+dash("50:f5:da:3d:33:32", "Fiji",      particle("1f0039001047343339383037", "setProjector", "off"));
 dash("44:65:0d:c5:6d:5f", "All", cast("doorbell.mp3", "audio/mp3", .75, 12000), particle("1f0039001047343339383037", "setPattern", "flash"), delay(particle("1f0039001047343339383037", "setPattern", "last"), 12000));
 dash("f0:27:2d:bb:21:9d", "Gatorade", () => door(51022800).then((code) => tts(code.split("").join(" "), 0)).then((url) => {console.log(url); cast(url, "audio/mp3", .75, 12000)()}));
 dash("44:65:0d:06:c8:b4", "Snuggie", () => door(51022800).then((code) => tts(code.split("").join(" "), 0)).then((url) => {console.log(url); cast(url, "audio/mp3", .75, 12000)()}));
